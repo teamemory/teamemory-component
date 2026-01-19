@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+import App from './App.jsx';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 

@@ -19,10 +19,6 @@ try {
   console.log('🏗️ 构建CJS模块...');
   execSync('rollup -c --environment FORMAT:cjs', { stdio: 'inherit' });
 
-  // 构建TypeScript类型定义
-  console.log('📝 生成类型定义...');
-  execSync('npx tsc --emitDeclarationOnly --outDir dist/types', { stdio: 'inherit' });
-
   // 复制package.json到dist目录
   const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'));
   const minimalPackageJson = {
@@ -37,7 +33,6 @@ try {
     bugs: packageJson.bugs,
     main: './cjs/index.cjs',
     module: './esm/index.mjs',
-    types: './types/index.d.ts',
     exports: packageJson.exports,
     dependencies: packageJson.dependencies,
     peerDependencies: {

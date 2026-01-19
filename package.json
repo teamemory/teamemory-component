@@ -21,12 +21,10 @@
   },
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
-  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.cjs",
-      "types": "./dist/types/index.d.ts"
+      "require": "./dist/cjs/index.cjs"
     },
     "./esm/*": "./dist/esm/*",
     "./cjs/*": "./dist/cjs/*",
@@ -44,8 +42,8 @@
     "docs:serve": "vitepress serve docs",
     "test": "vitest",
     "test:run": "vitest run",
-    "lint": "eslint packages --ext .ts,.tsx --fix",
-    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "lint": "eslint packages --ext .js,.jsx --fix",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "prepare": "husky install",
     "new": "node scripts/cli.js create"
   },
@@ -54,7 +52,10 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
     "@element-plus/icons-vue": "^2.1.0",
+    "@rollup/plugin-babel": "^6.1.0",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
@@ -65,6 +66,7 @@
     "@typescript-eslint/parser": "^5.59.6",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vue/babel-preset-jsx": "^1.4.0",
     "@vue/test-utils": "^2.3.2",
     "element-plus": "^2.3.6",
     "eslint": "^8.41.0",
@@ -94,7 +96,7 @@
     "vue-tsc": "^1.6.5"
   },
   "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
+    "*.{js,jsx,vue}": [
       "eslint --fix",
       "prettier --write"
     ]

@@ -1,5 +1,5 @@
 {
-  "name": "@teamemory/components",
+  "name": "@teamemory/component",
   "version": "0.0.1",
   "description": "A Vue3 component library based on Element Plus and Emotion",
   "main": "dist/index.js",

@@ -14,8 +14,8 @@ export default defineConfig({
   root: "examples", // 指定examples为根目录，这样开发服务器会以examples中的index.html为入口
   build: {
     lib: {
-      entry: "./packages/index.ts",
-      name: "TeamemoryComponents",
+      entry: "./packages/index.js",
+      name: "TeamemoryComponent",
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {

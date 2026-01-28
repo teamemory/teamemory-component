@@ -17,12 +17,11 @@ export default defineConfig({
       // ✅ 正确的入口路径应指向组件库源码
       entry: path.resolve(__dirname, "packages/index.js"),
       name: "TeamemoryComponent",
-      formats: ['es', 'cjs', 'umd'],
+      formats: ["es", "cjs", "umd"],
       fileName: (format) => {
         if (format === "es") return "index.esm.js";
         if (format === "cjs") return "index.cjs.js";
         if (format === "umd") return "index.umd.js";
-        return `index.js`;
       },
     },
     // 修改：将输出目录改为根目录下的 dist

@@ -67,3 +67,5 @@ local/
 
 # Documentation
 docs/.vitepress/cache
+
+.npmrc

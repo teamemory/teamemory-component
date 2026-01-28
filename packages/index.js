@@ -1,6 +1,6 @@
 // 导入组件
-import { TmButton } from "./components/button";
-import { TmCard } from "./components/card";
+import { TmButton } from "./components/button/index";
+import { TmCard } from "./components/card/index";
 
 // 导入Hook
 import { useCounter } from "./hooks/useCounter";

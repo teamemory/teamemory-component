@@ -14,10 +14,18 @@ export default defineConfig({
   root: "examples", // 指定examples为根目录，这样开发服务器会以examples中的index.html为入口
   build: {
     lib: {
-      entry: "./packages/index.js",
+      // ✅ 正确的入口路径应指向组件库源码
+      entry: path.resolve(__dirname, "packages/index.js"),
       name: "TeamemoryComponent",
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => {
+        if (format === "es") return "index.esm.js";
+        if (format === "cjs") return "index.cjs.js";
+        if (format === "umd") return "index.umd.js";
+        return `index.${format}.js`;
+      },
     },
+    // 修改：将输出目录改为根目录下的 dist
+    outDir: path.resolve(__dirname, "dist"),
     rollupOptions: {
       external: ["vue", "element-plus", "@emotion/css"],
       output: {

@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import TeamemoryComponents from '../packages/index';
+import TeamemoryComponents from '@/index';
 
 const app = createApp(App);
 app.use(TeamemoryComponents);

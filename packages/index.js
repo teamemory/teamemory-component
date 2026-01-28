@@ -1,9 +1,9 @@
 // 导入组件
-import { TmButton } from "./components/src/button/src/index";
-import { TmCard } from "./components/src/card/src/index";
+import { TmButton } from "./components/button";
+import { TmCard } from "./components/card";
 
 // 导入Hook
-import { useCounter } from "./hooks/src/useCounter";
+import { useCounter } from "./hooks/useCounter";
 
 // 组件列表
 const components = [TmButton, TmCard];

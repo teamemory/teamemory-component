@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { useCounter } from '../packages/index';
+import { useCounter } from '@/index';
 
 export default {
   name: 'App',

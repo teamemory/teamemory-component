@@ -69,3 +69,5 @@ local/
 docs/.vitepress/cache
 
 .npmrc
+
+docs/.vitepress/dist
